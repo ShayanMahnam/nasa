@@ -1,38 +1,95 @@
-.App {
-  text-align: center;
+.logo {
+  width: 200px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+header{
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2.5rem;
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  gap: 3rem;
+}
+
+.items a{
+  color: white;
+  text-decoration: none;
+  font-family: 'Strait', sans-serif;
+  font-size: 3rem;
+}
+
+.App{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+}
+h1{
+  color: white;
+  font-family: 'Strait', sans-serif;
+  font-size: 3rem;
+}
+
+p{
+  color: white;
+  font-family: 'Strait', sans-serif;
+  font-size: 2rem;
+}
+
+.description{
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+@media screen and (max-width: 489px){
+  .App{
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+.pic{
+  width: 300px;
+}
+h1{
   color: white;
+  font-family: 'Strait', sans-serif;
+  font-size: 2.5rem;
 }
 
-.App-link {
-  color: #61dafb;
+p{
+  color: white;
+  font-family: 'Strait', sans-serif;
+  font-size: 1.5rem;
+}
+.logo {
+  width: 100px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1.5rem;
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.items a{
+  color: white;
+  text-decoration: none;
+  font-family: 'Strait', sans-serif;
+  font-size: 2rem;
+}
+.description{
+  margin-bottom: 1rem;
+}
 }
