@@ -6,8 +6,8 @@ function Moon() {
       <div className="picture-container">
         <img
           data-aos="slide-right"
-          data-aos-delay="150"
-          data-aos-duration="3000"
+          data-aos-delay="50"
+          data-aos-duration="2000"
           data-aos-easing="ease-in-out"
           className="pic"
           src={MoonPicture}
@@ -18,8 +18,8 @@ function Moon() {
 
       <div
         data-aos="fade-up"
-        data-aos-delay="150"
-        data-aos-duration="3000"
+        data-aos-delay="50"
+        data-aos-duration="2000"
         data-aos-easing="ease-in-out"
         className="description"
       >
