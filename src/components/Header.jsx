@@ -1,17 +1,21 @@
 import Logo from "../assets/nl.png";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Header = () => {
   return (
     <header>
       <img className="logo" src={Logo} alt="Nasa Logo" />
-      <nav>
+      <nav id="menu">
         <ul className="list">
           <li className="items">
-            <Link to={"/"}>home</Link>
+            <NavLink to={"/"}>
+              Home
+            </NavLink>
           </li>
           <li className="items">
-            <Link to={"/moon"}>Moon</Link>
+            <NavLink to={"/moon"} >
+              Moon
+            </NavLink>
           </li>
         </ul>
       </nav>

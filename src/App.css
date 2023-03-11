@@ -26,6 +26,10 @@ header{
   text-decoration: underline;
 }
 
+#menu a.active {
+  text-decoration: underline;
+}
+
 .App{
   display: flex;
   justify-content: space-around;
