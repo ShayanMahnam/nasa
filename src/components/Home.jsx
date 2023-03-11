@@ -7,7 +7,7 @@ function Home() {
         <img
           data-aos="slide-right"
           data-aos-delay="150"
-          data-aos-duration="3000"
+          data-aos-duration="2000"
           data-aos-easing="ease-in-out"
           className="pic"
           src={AsPicture}
@@ -19,7 +19,7 @@ function Home() {
       <div
         data-aos="fade-up"
         data-aos-delay="150"
-        data-aos-duration="3000"
+        data-aos-duration="2000"
         data-aos-easing="ease-in-out"
         className="description"
       >
