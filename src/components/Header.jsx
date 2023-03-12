@@ -8,14 +8,13 @@ const Header = () => {
       <nav id="menu">
         <ul className="list">
           <li className="items">
-            <NavLink to={"/"}>
-              Home
-            </NavLink>
+            <NavLink to={"/"}>Home</NavLink>
           </li>
           <li className="items">
-            <NavLink to={"/moon"} >
-              Moon
-            </NavLink>
+            <NavLink to={"/astronaut"}>Astronaut</NavLink>
+          </li>
+          <li className="items">
+            <NavLink to={"/moon"}>Moon</NavLink>
           </li>
         </ul>
       </nav>
