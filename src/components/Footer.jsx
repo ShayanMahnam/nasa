@@ -15,7 +15,12 @@ function Footer() {
           <p>
             {" "}
             Design by{" "}
-            <a className='my-site' href="https://shayanmahnam.netlify.app/" target={"_blank"}>
+            <a
+              className="my-site"
+              href="https://shayanmahnam.netlify.app/"
+              target={"_blank"}
+              rel="noreferrer"
+            >
               Shayan
             </a>{" "}
           </p>
