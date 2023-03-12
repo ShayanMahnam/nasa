@@ -11,7 +11,15 @@ function Footer() {
   return (
     <>
       <div className="footer-wrapper">
-        <footer className={footerBtn ? "show" : ""}>Design by Shayan</footer>
+        <footer className={footerBtn ? "show" : ""}>
+          <p>
+            {" "}
+            Design by{" "}
+            <a className='my-site' href="https://shayanmahnam.netlify.app/" target={"_blank"}>
+              Shayan
+            </a>{" "}
+          </p>
+        </footer>
       </div>
       <div className="arrow-up" onClick={handleClick}>
         {footerBtn ? <FaArrowCircleDown /> : <FaArrowCircleUp />}

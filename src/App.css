@@ -108,6 +108,15 @@ footer {
 .arrow-up:hover {
   color: #666;
 }
+
+.my-site{
+  color: white;
+  text-decoration: none;
+}
+
+.my-site:hover{
+  text-decoration: underline;
+}
 @media screen and (max-width: 489px){
   .App{
   flex-direction: column;
