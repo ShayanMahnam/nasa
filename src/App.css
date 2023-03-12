@@ -2,6 +2,10 @@
   width: 200px;
 }
 
+.piclogo{
+  width: 600px;
+}
+
 header{
   display: flex;
   justify-content: space-between;
@@ -109,6 +113,9 @@ footer {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+.piclogo{
+  width: 300px;
 }
 .pic{
   width: 300px;

@@ -1,5 +1,5 @@
 import React from 'react'
-import AsPicture from "../assets/nl.png";
+import NasaLogo from "../assets/nl.png";
 function Home() {
   return (
     <div className="App">
@@ -9,10 +9,10 @@ function Home() {
           data-aos-delay="150"
           data-aos-duration="2000"
           data-aos-easing="ease-in-out"
-          className="pic"
-          src={AsPicture}
-          alt="astronaut"
-          title="astronaut"
+          className="piclogo"
+          src={NasaLogo}
+          alt="nasa logo"
+          title="nasa"
         />
       </div>
       </div>
