@@ -1,20 +1,38 @@
 import Logo from "../assets/nl.png";
 import { NavLink } from "react-router-dom";
+import { useState } from "react";
 
 const Header = () => {
+  const [showMenu, setShowMenu] = useState(false);
+
+  const toggleMenu = () => {
+    setShowMenu(!showMenu);
+  };
+
   return (
     <header>
       <img className="logo" src={Logo} alt="Nasa Logo" />
-      <nav id="menu">
+      <button className="burger-menu" onClick={toggleMenu}>
+        <span className="burger-menu__line"></span>
+        <span className="burger-menu__line"></span>
+        <span className="burger-menu__line"></span>
+      </button>
+      <nav id="menu" className={showMenu ? "menu--open" : ""}>
         <ul className="list">
           <li className="items">
-            <NavLink to={"/"}>Home</NavLink>
+            <NavLink to={"/"} onClick={toggleMenu}>
+              Home
+            </NavLink>
           </li>
           <li className="items">
-            <NavLink to={"/astronaut"}>Astronaut</NavLink>
+            <NavLink to={"/astronaut"} onClick={toggleMenu}>
+              Astronaut
+            </NavLink>
           </li>
           <li className="items">
-            <NavLink to={"/moon"}>Moon</NavLink>
+            <NavLink to={"/moon"} onClick={toggleMenu}>
+              Moon
+            </NavLink>
           </li>
         </ul>
       </nav>
