@@ -7,7 +7,7 @@ function Home() {
         <img
           data-aos="fade"
           data-aos-delay="150"
-          data-aos-duration="2000"
+          data-aos-duration="3000"
           data-aos-easing="ease-in-out"
           className="piclogo"
           src={NasaLogo}

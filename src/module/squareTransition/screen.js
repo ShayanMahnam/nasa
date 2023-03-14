@@ -7,7 +7,7 @@ export default class Screen {
     }
 
     drawRectangle(x, y, h, w){
-        this.ctx.fillStyle = "blue";
+        this.ctx.fillStyle = "white";
         this.ctx.fillRect(x, y, h, w);
     }
 

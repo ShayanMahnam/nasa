@@ -55,9 +55,6 @@ export default class AnimationController {
 	}
 
 	clearGrid(onComplete) {
-		// 
-		let drawingIndex = 0;
-
 		const drawingInterval = setInterval(() => {
 			const square = this.getRandomSquare()
 
@@ -70,7 +67,7 @@ export default class AnimationController {
 
 			this.tempSquares.push(square)
 			if (this.squares.length) {
-				drawingIndex++
+				
 			} else {
 				clearInterval(drawingInterval)
 				this.squares = this.tempSquares;

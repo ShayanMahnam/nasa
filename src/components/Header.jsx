@@ -8,7 +8,7 @@ function SquareTransition({showCanvas, controls}){
     x: window.innerWidth,
     y: window.innerHeight,
   })
-  let isMobile = window.matchMedia('(max-width: 800px)');
+  let isMobile = window.matchMedia("(max-width: 489px)");
   const canvasRef = useRef(null);
 
   useEffect(()=>{
@@ -17,9 +17,8 @@ function SquareTransition({showCanvas, controls}){
     myCanvas.height = screenSizes.y;
 
     const newController = new AnimationController(
-      canvasRef.current, isMobile? 50 : 80
+      canvasRef.current, isMobile ? 100 : 150
     )
-    console.log(process)
     controls.current = newController;
   }, [screenSizes])
 
@@ -40,7 +39,7 @@ function SquareTransition({showCanvas, controls}){
   )
 }
 
-// HEADDER;
+// HEADER;
 const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
   const navigate = useNavigate();
@@ -54,12 +53,6 @@ const Header = () => {
       gridControlsRef.current.clearGrid(()=> setShowCanvas(false))
     });
   }
-
-  useEffect(()=>{
-    setTimeout(()=>{
-      
-    }, 4000)
-  }, [])
 
   // const toggleMenu = (e) => {
   //   e.preventDefault()
