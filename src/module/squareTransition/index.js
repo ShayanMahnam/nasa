@@ -31,14 +31,22 @@ export default class AnimationController {
 		return this.squares.splice(randomIndex, 1)[0]
 	}
 
+	getRandomColor(){
+		const colors = ["white","black"]
+		const randomIndex = Math.floor(Math.random() * colors.length)
+		return colors[randomIndex]
+	}
+
 	drawGrid(onComplete) {
 		const drawingInterval = setInterval(() => {
 			const square = this.getRandomSquare()
+			const color = this.getRandomColor()
 			this.screen.drawRectangle(
 				square.x,
 				square.y,
 				this.squareWidth,
-				this.squareWidth
+				this.squareWidth,
+				color
 			)
 
 			this.tempSquares.push(square)

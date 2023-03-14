@@ -6,8 +6,8 @@ export default class Screen {
         this.height = this.canvas.height;
     }
 
-    drawRectangle(x, y, h, w){
-        this.ctx.fillStyle = "white";
+    drawRectangle(x, y, h, w, c){
+        this.ctx.fillStyle = c;
         this.ctx.fillRect(x, y, h, w);
     }
 

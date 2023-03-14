@@ -1,5 +1,5 @@
 import React from 'react'
-import NasaLogo from "../assets/nl.png";
+import NasaLogo from "../assets/nasa.svg";
 function Home() {
   return (
     <div className="App">

@@ -1,4 +1,4 @@
-import Logo from "../assets/nl.png";
+import Logo from "../assets/nasa.svg";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
 import AnimationController from "../module/squareTransition";
@@ -17,9 +17,10 @@ function SquareTransition({showCanvas, controls}){
     myCanvas.height = screenSizes.y;
 
     const newController = new AnimationController(
-      canvasRef.current, isMobile ? 100 : 150
+      canvasRef.current, isMobile ? 50 : 150
     )
     controls.current = newController;
+
   }, [screenSizes])
 
   useEffect(()=>{
