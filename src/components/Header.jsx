@@ -3,41 +3,44 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
 import AnimationController from "../module/squareTransition";
 
-function SquareTransition({showCanvas, controls}){
+function SquareTransition({ showCanvas, controls }) {
   const [screenSizes, setScreenSizes] = useState({
     x: window.innerWidth,
     y: window.innerHeight,
-  })
+  });
   let isMobile = window.matchMedia("(max-width: 489px)");
   const canvasRef = useRef(null);
+  
 
-  useEffect(()=>{
+  useEffect(() => {
     const myCanvas = canvasRef.current;
     myCanvas.width = screenSizes.x;
     myCanvas.height = screenSizes.y;
 
     const newController = new AnimationController(
-      canvasRef.current, isMobile ? 50 : 150
-    )
+      canvasRef.current,
+      isMobile.matches ? 100 : 150
+    );
     controls.current = newController;
 
-  }, [screenSizes])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [screenSizes]);
 
-  useEffect(()=>{
-    function handleResize(e){
-      const {target} = e;
-      setScreenSizes({x: target.innerWidth, y: target.innerHeight})
+  useEffect(() => {
+    function handleResize(e) {
+      const { target } = e;
+      setScreenSizes({ x: target.innerWidth, y: target.innerHeight });
     }
 
-    window.addEventListener('resize', handleResize)
-    return ()=> window.removeEventListener('resize', handleResize)
-  }, [])
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
-    <div style={{display: showCanvas? "block" : "none"}}>
+    <div style={{ display: showCanvas ? "block" : "none" }}>
       <canvas className="squaresCanvas" ref={canvasRef}></canvas>
     </div>
-  )
+  );
 }
 
 // HEADER;
@@ -46,12 +49,17 @@ const Header = () => {
   const navigate = useNavigate();
   const [showCanvas, setShowCanvas] = useState(false);
   const gridControlsRef = useRef(null);
+  const [urlOn, SetUrlOn] = useState('/')
 
-  function transitionPage(url){
+  function transitionPage(url) {
     setShowCanvas(true);
-    gridControlsRef.current.drawGrid(()=> {
+    SetUrlOn(url)
+    if(url === urlOn){
+      setShowCanvas(false)
+    }
+    gridControlsRef.current.drawGrid(() => {
       navigate(url);
-      gridControlsRef.current.clearGrid(()=> setShowCanvas(false))
+      gridControlsRef.current.clearGrid(() => setShowCanvas(false));
     });
   }
 
@@ -61,20 +69,20 @@ const Header = () => {
   //   setShowMenu(!showMenu);
   // };
 
-  const toggleHandler = (url)=>{
+  const toggleHandler = (url) => {
     return (e) => {
-      e.preventDefault()
-      transitionPage(url)
+      e.preventDefault();
+      transitionPage(url);
       setShowMenu(!showMenu);
-    }
-  }
-  
+    };
+  };
+
   return (
     <>
-      <SquareTransition showCanvas={showCanvas} controls={gridControlsRef}/>
+      <SquareTransition showCanvas={showCanvas} controls={gridControlsRef} />
       <header>
         <img className="logo" src={Logo} alt="Nasa Logo" />
-        <button className="burger-menu" onClick={()=> setShowMenu(!showMenu)}>
+        <button className="burger-menu" onClick={() => setShowMenu(!showMenu)}>
           <span className="burger-menu__line"></span>
           <span className="burger-menu__line"></span>
           <span className="burger-menu__line"></span>
@@ -82,17 +90,17 @@ const Header = () => {
         <nav id="menu" className={showMenu ? "menu--open" : ""}>
           <ul className="list">
             <li className="items">
-              <NavLink to={"/"} onClick={toggleHandler('/')}>
+              <NavLink to={"/"} onClick={toggleHandler("/")}>
                 Home
               </NavLink>
             </li>
             <li className="items">
-              <NavLink to={"/astronaut"} onClick={toggleHandler('/astronaut')}>
+              <NavLink to={"/astronaut"} onClick={toggleHandler("/astronaut")}>
                 Astronaut
               </NavLink>
             </li>
             <li className="items">
-              <NavLink to={"/moon"} onClick={toggleHandler('/moon')}>
+              <NavLink to={"/moon"} onClick={toggleHandler("/moon")}>
                 Moon
               </NavLink>
             </li>
